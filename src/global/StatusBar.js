@@ -84,7 +84,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function DenseAppBar() {
+export default function DenseAppBar(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -103,6 +103,7 @@ export default function DenseAppBar() {
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open
         })}
+        style={{ backgroundColor: "#26ade3" }}
       >
         <Toolbar variant="dense">
           <IconButton
@@ -170,7 +171,7 @@ export default function DenseAppBar() {
             <ListItemIcon>
               <HomeWorkIcon />
             </ListItemIcon>
-            <ListItemText primary="My center" />
+            <ListItemText primary="My Center" />
           </ListItem>
           <ListItem button>
             <ListItemIcon>
@@ -180,6 +181,12 @@ export default function DenseAppBar() {
           </ListItem>
         </List>
       </Drawer>
+      <main className={classes.content}>
+        <props.wrappedComponent />
+      </main>
+      {/* <main className={classes.content}>
+        <h2>Main content</h2>
+      </main> */}
     </div>
   );
 }

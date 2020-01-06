@@ -4,7 +4,7 @@ import HOC from "../../global/Hoc";
 class NewsRoom extends Component {
   render() {
     return (
-      <div>
+      <div style={{ padding: "5px", marginTop: "5px" }}>
         <h2>News Room</h2>
       </div>
     );
