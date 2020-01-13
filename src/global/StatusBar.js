@@ -5,7 +5,7 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   AppBar,
   Toolbar,
-  Typography,
+  //Typography,
   IconButton,
   Divider,
   List,
@@ -14,6 +14,10 @@ import {
   ListItemIcon,
   ListItemText
 } from "@material-ui/core";
+import {
+  Link //BrowserRouter as Router
+} from "react-router-dom";
+
 import Menu from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
@@ -155,25 +159,25 @@ export default function DenseAppBar(props) {
         </List>
         <Divider /> */}
         <List>
-          <ListItem button>
+          <ListItem button divider component={Link} to="/">
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
-          <ListItem button>
+          <ListItem button divider component={Link} to="/myprofile">
             <ListItemIcon>
               <PersonIcon />
             </ListItemIcon>
             <ListItemText primary="My Profile" />
           </ListItem>
-          <ListItem button>
+          <ListItem button divider>
             <ListItemIcon>
               <HomeWorkIcon />
             </ListItemIcon>
             <ListItemText primary="My Center" />
           </ListItem>
-          <ListItem button>
+          <ListItem button divider component={Link} to="/holidays">
             <ListItemIcon>
               <CalendarTodayIcon />
             </ListItemIcon>
